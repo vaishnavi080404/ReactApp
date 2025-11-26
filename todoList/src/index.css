@@ -1,0 +1,240 @@
+/* Global Styles */
+body {
+  font-family: 'Quicksand', sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #f8f8ff;
+  color: #4a4a4a;
+  min-height: 100vh; /* Full viewport height */
+  width: 100vw; /* Full viewport width */
+  overflow-x: hidden; /* Prevent horizontal scroll */
+}
+
+#root {
+  width: 100vw; /* Cover entire screen */
+  width: 100%;
+  height: 100vh; /* Ensure it fills the screen vertically */
+  margin: 0; /* Remove default margins */
+  padding: 30px;
+  box-sizing: border-box; /* Include padding in width/height */
+  background-color: #fff;
+  box-shadow: none; /* Remove default box shadow */
+  border-radius: 0; /* Remove default border radius */
+  text-align: center;
+  display: flex;
+  flex-direction: column; /* Stack content vertically */
+  align-items: center; /* Center items horizontally */
+  justify-content: flex-start; /* Align items to the top */
+}
+
+/* Hero Section Styles */
+.hero {
+  background: linear-gradient(45deg, #ff5722, #795548); /* Earthy gradient */
+  color: white;
+  padding: 60px;
+  margin-bottom: 50px;
+  border-radius: 0; /* Remove border radius */
+  animation: heroAnimation 1.5s ease-out;
+  text-shadow: 0 3px 6px rgba(0, 0, 0, 0.25);
+  width: 100vw; /* Full width */
+  box-sizing: border-box; /* Include padding in width */
+}
+
+.hero h1 {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 4em;
+  margin-bottom: 25px;
+  letter-spacing: 2px;
+  animation: rainbowText 7s linear infinite;
+  text-transform: uppercase; /* Make it stand out */
+}
+
+.hero p {
+  font-size: 1.6em;
+  opacity: 0.9;
+  line-height: 1.8;
+  animation: fadeIn 2s ease-in-out; /* Add fadeIn animation */
+}
+
+/* Task Input Card Styles */
+.task-input-card {
+  background-color: #fffde7; /* Light yellow card */
+  padding: 40px;
+  border-radius: 0; /* Remove border radius */
+  margin-bottom: 40px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+  width: 100%; /* Full width */
+  box-sizing: border-box; /* Include padding in width */
+}
+
+.task-input-card h2 {
+  font-size: 2em;
+  margin-bottom: 30px;
+  color: #333;
+  text-transform: capitalize; /* Make it more readable */
+}
+
+/* Input Styles */
+input[type="text"] {
+  padding: 16px 20px;
+  border: 2px solid #ffc107; /* Yellow border */
+  border-radius: 0; /* Remove border radius */
+  width: 100%;
+  margin-bottom: 30px;
+  font-size: 1.2em;
+  transition: border-color 0.3s ease;
+  box-sizing: border-box; /* Include padding in width */
+}
+
+input[type="text"]:focus {
+  border-color: #ff9800; /* Orange border on focus */
+  outline: none;
+}
+
+/* Button Styles */
+button {
+  background: linear-gradient(to right, #ff9800, #ffc107); /* Orange gradient */
+  color: white;
+  padding: 16px 30px;
+  border: none;
+  border-radius: 0; /* Remove border radius */
+  cursor: pointer;
+  font-size: 1.2em;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.12);
+}
+
+button:hover {
+  background: linear-gradient(to right, #f57c00, #ffb300); /* Darker gradient on hover */
+  transform: translateY(-3px);
+}
+
+/* Task List Card Styles */
+.task-list-card {
+  background-color: #fbe9e7; /* Light orange card */
+  padding: 40px;
+  border-radius: 0; /* Remove border radius */
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+  width: 100%; /* Full width */
+  box-sizing: border-box; /* Include padding in width */
+}
+
+.task-list-card h2 {
+  font-size: 2em;
+  margin-bottom: 30px;
+  color: #333;
+  text-transform: capitalize; /* Make it more readable */
+}
+
+/* List Styles */
+ul {
+  list-style: none;
+  padding: 0;
+}
+
+li {
+  padding: 20px;
+  border-bottom: 1px solid #ffccbc; /* Light orange border */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  animation: listItemAnimation 0.5s ease-out forwards;
+  opacity: 0;
+  transform: translateY(-10px);
+  box-sizing: border-box; /* Include padding in width */
+  font-size: medium;
+}
+
+li:last-child {
+  border-bottom: none;
+}
+
+/* Completed Task Styles */
+.completed {
+  text-decoration: line-through;
+  color: #9e9e9e; /* Gray color */
+}
+
+/* Task Container Styles */
+.task-container {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+/* Delete Button Styles */
+.delete-button {
+  background-color: #e57373; /* Red delete button */
+  color: white;
+  border: none;
+  border-radius: 0; /* Remove border radius */
+  cursor: pointer;
+  padding: 12px 18px;
+  font-size: 1.1em;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.delete-button:hover {
+  background-color: #f44336;
+  transform: scale(1.1);
+}
+
+/* Toast Notification Styles */
+.toast {
+  position: fixed;
+  top: 30px;
+  right: 30px;
+  background-color: #4caf50;
+  color: white;
+  padding: 18px 36px;
+  border-radius: 0; /* Remove border radius */
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.5s, visibility 0.5s;
+  z-index: 1000;
+  box-shadow: 0 5px 12px rgba(0, 0, 0, 0.2);
+}
+
+.toast.show {
+  opacity: 1;
+  visibility: visible;
+}
+
+/* Keyframe Animations */
+@keyframes heroAnimation {
+  from {
+    opacity: 0;
+    transform: translateY(-30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes listItemAnimation {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes rainbowText {
+  0% { color: #f44336; }
+  14% { color: #e91e63; }
+  28% { color: #9c27b0; }
+  42% { color: #673ab7; }
+  57% { color: #3f51b5; }
+  71% { color: #2196f3; }
+  85% { color: #00bcd4; }
+  100% { color: #4caf50; }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 0.9; /* Match the opacity in .hero p */
+  }
+}
